@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Modern browser pre-fetch preconnect -->
+        <block name="lightspeed.head.dns-prefetch" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link href="//%s" rel="dns-prefetch" />]]></argument>
+            </arguments>
+        </block>
+        <block name="lightspeed.head.preconnect" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link href="//%s" rel="preconnect dns-prefetch" crossorigin>]]></argument>
+            </arguments>
+        </block>
+
+        <!-- Fonts/Inline styles -->
+        <block name="lightspeed.head.fonts" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link rel="preload" as="style" href="%s" onload="this.onload=null;this.rel='stylesheet'">]]></argument>
+            </arguments>
+        </block>
+        <block name="lightspeed.head.inline-styles" class="Elgentos\Lightspeed\Block\ItemsWithPattern" template="Elgentos_Lightspeed::style.phtml"  />
+
+        <!-- Body CSS/JS -->
+        <block name="lightspeed.body.defer-styles" class="Elgentos\Lightspeed\Block\ItemsWithPattern" template="Elgentos_Lightspeed::defer-styles.phtml">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link rel="stylesheet" type="text/css" href="%s">]]></argument>
+            </arguments>
+        </block>
+        <block name="lightspeed.body.no-defer-styles" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link rel="stylesheet" type="text/css" href="%s">]]></argument>
+            </arguments>
+        </block>
+        <block name="lightspeed.body.inline-styles" class="Elgentos\Lightspeed\Block\ItemsWithPattern" template="Elgentos_Lightspeed::style.phtml" />
+        <block name="lightspeed.body.footer-js" class="Elgentos\Lightspeed\Block\ItemsWithPattern" />
+
+        <!-- move elements to head -->
+        <move element="lightspeed.head.inline-styles" destination="head.additional" />
+        <move element="lightspeed.head.dns-prefetch" destination="head.additional" />
+        <move element="lightspeed.head.preconnect" destination="head.additional" />
+        <move element="lightspeed.head.fonts" destination="head.additional" />
+
+        <!-- move elements before body ends -->
+        <move element="lightspeed.body.inline-styles" destination="before.body.end" />
+        <move element="lightspeed.body.no-defer-styles" destination="before.body.end" />
+        <move element="lightspeed.body.defer-styles" destination="before.body.end" />
+        <move element="lightspeed.body.footer-js" destination="before.body.end" />
+    </body>
+</page>
