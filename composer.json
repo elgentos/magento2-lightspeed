@@ -5,6 +5,10 @@
     "license": "Unlicense",
     "authors": [
         {
+            "name": "Gideon Overeem",
+            "email": "gideon@elgentos.nl"
+        },
+        {
             "name": "Jeroen Boersma",
             "email": "jeroen@elgentos.nl"
         }
