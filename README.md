@@ -57,6 +57,7 @@ You can also add specific rules and bind them to your module, instead to the the
 ``` 
 
 After that all default lightspeed feedback can go into `layout/default_lightspeed.xml`
+
 `app/design/frontend/your/theme/Magento_Theme/layout/default.xml`
 ```xml
 <?xml version="1.0"?>
