@@ -1,0 +1,14 @@
+{
+    "name": "elgentos/module-lightspeed",
+    "description": "Magento 2 Lightspeed optimizations",
+    "type": "magento2-module",
+    "license": "Unlicense",
+    "authors": [
+        {
+            "name": "Jeroen Boersma",
+            "email": "jeroen@elgentos.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
