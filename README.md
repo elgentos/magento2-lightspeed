@@ -1,46 +1,48 @@
 # Magento 2 - Lightspeed for Lighthouse optimizations
 
-Process your Google Lighthouse feedback with ease. This module defines several sections where you can define
+Process your Google Lighthouse feedback using sane defaults. This module defines several sections where you can define
 common feedback from Google Lighthouse.
 
 ## Installation
 
-Installation is easy, in your Magento 2 project root.
+Run this in your Magento 2 project root;
 
 ```bash
 composer require elgentos/module-lightspeed
+php bin/magento module:enable Elgentos_Lightspeed
+php bin/magento setup:upgrade
 ```
 
 ## Features
 
 ### Javascript handling
-move all `script` tags before body end. This is the default after installing this module, no exceptions(TODO).
+Move all `script` tags before body end. This is the default after installing this module, no exceptions.
 
 ### Connection optimization (layout.xml)
-Allow modern browsers to use dns prefetching and preconnecting.
+Allow modern browsers to use DNS prefetching and preconnecting.
 
-DNS prefetching only does a dns lookup, preconnecting already connects to the remote server and does ssl handshake.
-Preconnecting is limited to a few connections which is defined in your browser, we have fallback to dns-prefetching,
-but think before you add everything to `preconnect` 
+DNS prefetching only does a DNS lookup, preconnecting already connects to the remote server and does SSL handshake.
+Preconnecting is limited to a few connections which is defined in your browser, we have fallback to DNS-prefetching,
+but think before you add everything to `preconnect`.
 
 ### Fonts (layout.xml)
-Load external fonts to the head section
+Load external fonts to the head section.
 
 ### Styles (layout.xml)
-Inline css in the head or before body end for critical css.
+Inline CSS in the head or before body end for critical CSS.
 
 ### External CSS (layout.xml)
-We have several options for optimizing external css;
-* directly in the head
-* before body end
-* defer till all other stuff is done. 
+We have several options for optimizing external CSS;
+* Directly in the head;
+* Before body end;
+* Defer till all other stuff is done.
 
 ### Javascript (layout.xml)
-Javascript via XML before body end via layout xml.
+Javascript via XML before body end via layout XML.
 
 ## Usage
 
-Easiest usage to keep everything together is to add a handle to `layout/default.xml`.
+Preferred usage to keep everything together is to add a handle to `layout/default.xml`.
 You can also add controller specific rules, add them in the controller specific handles, for instance `layout/catalog_category_default.xml`
 
 You can also add specific rules and bind them to your module, instead to the theme.
