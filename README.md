@@ -1,7 +1,7 @@
-# Magento 2 - Lightspeed optimizations
+# Magento 2 - Lighthouse optimizations
 
-Process your Lightspeed feedback with ease. This module defines several sections where you can define
-common feedback from Google Lightspeed.
+Process your Google Lighthouse feedback with ease. This module defines several sections where you can define
+common feedback from Google Lighthouse.
 
 ## Installation
 
@@ -56,7 +56,7 @@ You can also add specific rules and bind them to your module, instead to the the
 </page>
 ``` 
 
-After that all default lightspeed feedback can go into `layout/default_lightspeed.xml`
+After that all default lighthouse feedback can go into `layout/default_lightspeed.xml`
 
 `app/design/frontend/your/theme/Magento_Theme/layout/default.xml`
 ```xml
