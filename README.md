@@ -1,4 +1,4 @@
-# Magento 2 - Lighthouse optimizations
+# Magento 2 - Lightspeed for Lighthouse optimizations
 
 Process your Google Lighthouse feedback with ease. This module defines several sections where you can define
 common feedback from Google Lighthouse.
