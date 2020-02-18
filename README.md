@@ -60,7 +60,7 @@ You can also add specific rules and bind them to your module, instead to the the
 
 After that all default lighthouse feedback can go into `layout/default_lightspeed.xml`
 
-`app/design/frontend/your/theme/Magento_Theme/layout/default.xml`
+`app/design/frontend/your/theme/Magento_Theme/layout/default_lightspeed.xml`
 ```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
