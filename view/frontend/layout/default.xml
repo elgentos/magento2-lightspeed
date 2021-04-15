@@ -14,6 +14,18 @@
                 <argument name="pattern" xsi:type="string"><![CDATA[<link href="//%s" rel="preconnect dns-prefetch" crossorigin>]]></argument>
             </arguments>
         </block>
+        
+        <block name="lightspeed.head.preload.fonts" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link href="//%s" as="font" rel="preload" crossorigin="anonymous" >]]></argument>
+            </arguments>
+        </block>
+
+        <block name="lightspeed.head.preload.styles" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
+            <arguments>
+                <argument name="pattern" xsi:type="string"><![CDATA[<link href="//%s" as="style" rel="preload" >]]></argument>
+            </arguments>
+        </block>
 
         <!-- Fonts/Inline styles -->
         <block name="lightspeed.head.fonts" class="Elgentos\Lightspeed\Block\ItemsWithPattern">
@@ -42,6 +54,8 @@
         <move element="lightspeed.head.dns-prefetch" destination="head.additional" />
         <move element="lightspeed.head.preconnect" destination="head.additional" />
         <move element="lightspeed.head.fonts" destination="head.additional" />
+        <move element="lightspeed.head.preload.fonts" destination="head.additional" />
+        <move element="lightspeed.head.preload.styles" destination="head.additional" />
 
         <!-- move elements before body ends -->
         <move element="lightspeed.body.inline-styles" destination="before.body.end" />
