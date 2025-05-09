@@ -90,7 +90,7 @@ class ItemsWithPattern extends Template
      * @param string $pattern
      * @return string
      */
-    public function render(string $pattern = null): string
+    public function render(?string $pattern = null): string
     {
         $pattern = $pattern ?? $this->pattern;
 
